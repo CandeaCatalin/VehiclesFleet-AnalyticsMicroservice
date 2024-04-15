@@ -1,6 +1,7 @@
 using AnalyticsMicroservice.BusinessLogic.Contracts;
 using AnalyticsMicroservice.Domain.Dtos;
 using AnalyticsMicroservice.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 
@@ -8,6 +9,7 @@ namespace AnalyticsMicroservice.Controllers;
 
 [ApiController]
 [Route("analytics")]
+[Authorize]
 public class AnalyticsController: ControllerBase
 {
     private readonly IAnalysisBusinessLogic analysisBusinessLogic;
